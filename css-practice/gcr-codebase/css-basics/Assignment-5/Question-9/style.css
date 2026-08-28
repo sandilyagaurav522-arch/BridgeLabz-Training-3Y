@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 40px;
+    background: #e5e7eb;
+    font-family: Georgia, serif;
+}
+
+.magazine {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    background: #fffdf5;
+}
+
+h1 {
+    column-span: all;
+    text-align: center;
+    font-size: 3rem;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+article {
+    column-count: 3;
+    column-gap: 40px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+article img {
+    float: left;
+    width: 45%;
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+}
+
+@media (max-width: 800px) {
+    article {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 15px;
+    }
+
+    .magazine {
+        padding: 20px;
+    }
+
+    article {
+        column-count: 1;
+    }
+
+    article img {
+        width: 100%;
+        float: none;
+        margin: 0 0 20px;
+    }
+}

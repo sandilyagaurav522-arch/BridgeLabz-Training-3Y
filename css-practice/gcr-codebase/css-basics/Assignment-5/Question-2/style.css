@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #1f2937;
+    background: #f8fafc;
+}
+
+header {
+    padding: 20px 8%;
+    background: #1e3a5f;
+    color: white;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+section {
+    min-height: 65vh;
+    padding: 80px 12%;
+    margin: 20px 0;
+    border-top: 5px solid rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+.history {
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+}
+
+.culture {
+    color: white;
+    background-image: url("https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=1600&q=80");
+    background-attachment: fixed;
+}
+
+.food {
+    background: radial-gradient(circle, #ffe29f, #ffa99f, #ff719a);
+}
+
+.travel {
+    color: white;
+    background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80");
+    background-attachment: fixed;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #1e3a5f;
+    color: white;
+}

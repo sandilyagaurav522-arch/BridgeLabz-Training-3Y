@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef4f7;
+    color: #1f2937;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 5%;
+    background-color: #12355b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+main {
+    flex: 1;
+    padding: 120px 10% 50px;
+}
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.hero img {
+    width: 280px;
+    max-width: 45%;
+    border-radius: 50%;
+    border: 5px solid #12355b;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff7f50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#about {
+    margin-top: 40px;
+    padding: 2rem;
+    background-color: #dbeafe;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #12355b;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding-top: 150px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero img {
+        max-width: 80%;
+    }
+}
