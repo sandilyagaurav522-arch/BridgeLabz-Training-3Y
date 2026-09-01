@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form and Result</title>
+</head>
+<body>
+    <h1>Simple Form</h1>
+
+    <form action="result.html" method="get" target="resultFrame">
+        <label for="text">Enter Text:</label>
+        <input type="text" id="text" name="text" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+
+    <!-- The result page loads in this iframe after the form is submitted. -->
+    <iframe
+        src="about:blank"
+        name="resultFrame"
+        width="70%"
+        height="150"
+        title="Form Result">
+    </iframe>
+</body>
+</html>
