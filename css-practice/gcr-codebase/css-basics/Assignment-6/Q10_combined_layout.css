@@ -1,0 +1,5 @@
+/* Q10 - Flexbox + Grid responsive layout */
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;background:#0f172a;color:white}.logo{font-size:1.5rem;font-weight:bold;border:2px solid white;border-radius:50%;padding:8px 11px}nav{display:flex;gap:25px}nav a{color:white;text-decoration:none}
+.layout{flex:1;display:grid;grid-template-columns:2fr 1fr;gap:30px;max-width:1100px;width:100%;margin:auto;padding:45px}article,aside{background:white;border-radius:18px;padding:30px;box-shadow:0 8px 20px #0002}.title{animation:rise .8s ease both}.boxes{display:flex;gap:18px;margin-top:30px}.boxes section{flex:1;padding:20px;background:#e0e7ff;border-radius:12px}
+footer{text-align:center;padding:18px;background:#0f172a;color:white}@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@media(max-width:700px){header{flex-direction:column;gap:15px}.layout{grid-template-columns:1fr;padding:25px}.boxes{flex-direction:column}}

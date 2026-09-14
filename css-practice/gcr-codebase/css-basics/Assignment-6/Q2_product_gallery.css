@@ -1,0 +1,6 @@
+/* Q2 - Four-column CSS Grid product gallery */
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033}
+header{text-align:center;padding:25px;background:#0f172a;color:white}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;padding:45px;max-width:1200px;margin:auto}
+.card{min-height:190px;padding:28px;background:white;border-radius:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 8px 20px #0002;transition:transform .3s}
+.card:hover{transform:scale(1.05)}.card p{font-size:1.25rem;font-weight:bold;color:#2563eb}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.products{grid-template-columns:1fr;padding:25px}}

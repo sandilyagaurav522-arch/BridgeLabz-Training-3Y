@@ -1,0 +1,9 @@
+/* Q1 - Flexbox Portfolio */
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;color:#172033;background:#f5f7fb}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:#172554;color:white}
+.site-header h1{margin:0}.site-header nav{display:flex;gap:24px}.site-header a{color:white;text-decoration:none}
+.hero{min-height:65vh;display:flex;justify-content:center;align-items:center;gap:70px;padding:60px 8%}
+.about,.image-section{flex:1}.about{max-width:650px}.about h2,.skills h2{font-size:2rem}
+.image-section{display:flex;justify-content:center}.image-section img{width:min(100%,420px);border-radius:22px;box-shadow:0 15px 35px #0002}
+.skills{text-align:center;padding:30px;background:#e0e7ff} footer{text-align:center;padding:18px;background:#172554;color:white}
+@media(max-width:700px){.site-header,.hero{flex-direction:column}.site-header{gap:15px}.hero{gap:30px;text-align:center}.site-header nav{flex-wrap:wrap;justify-content:center}}

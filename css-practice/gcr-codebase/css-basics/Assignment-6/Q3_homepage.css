@@ -1,0 +1,6 @@
+/* Q3 - Flexbox homepage */
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Arial,sans-serif;display:flex;flex-direction:column;background:#f1f5f9;color:#172033}
+header{background:#1e3a8a;color:white;padding:22px}header h1{text-align:center;margin:0 0 18px}nav{display:flex;justify-content:space-around}nav a{color:white;text-decoration:none;padding:8px 20px}
+main{flex:1;display:flex;justify-content:center;align-items:center;gap:25px;padding:40px}.box{flex:1;max-width:320px;min-height:220px;padding:30px;background:white;border-radius:18px;text-align:center;box-shadow:0 8px 20px #0002;transition:transform .3s}.box:hover{transform:rotate(2deg)}
+footer{text-align:center;padding:18px;background:#0f172a;color:white}
+@media(max-width:700px){main{flex-direction:column}.box{width:100%}nav{gap:8px;flex-wrap:wrap}}

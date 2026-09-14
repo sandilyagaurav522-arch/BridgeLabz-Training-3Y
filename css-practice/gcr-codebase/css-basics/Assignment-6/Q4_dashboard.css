@@ -1,0 +1,6 @@
+/* Q4 - CSS Grid dashboard */
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#e2e8f0}.dashboard{min-height:100vh;display:grid;grid-template-columns:220px 1fr;grid-template-rows:auto 1fr}
+header{grid-column:1/-1;background:#0f172a;color:white;padding:22px;text-align:center}header h1{margin:0}
+aside{background:#1e293b;color:white;padding:25px;display:flex;flex-direction:column;gap:15px}aside a{color:white;text-decoration:none;padding:10px;border-radius:8px}aside a:hover{background:#334155}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;padding:35px}.box{min-height:180px;background:white;padding:25px;border-radius:16px;box-shadow:0 5px 12px #0002;transition:transform .3s,box-shadow .3s}.box:hover{transform:scale(1.03);box-shadow:0 15px 25px #0003}.wide{grid-column:span 2}
+@media(max-width:700px){.dashboard{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:auto}aside{flex-direction:row;justify-content:center;flex-wrap:wrap}}
