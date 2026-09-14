@@ -1,0 +1,52 @@
+/* Q6 - CSS Transformations */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    text-align: center;
+}
+
+header {
+    padding: 25px;
+    background: #111827;
+    color: white;
+}
+
+.transform-container {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.transform-item {
+    width: 150px;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #2563eb;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+}
+
+.rotate:hover { transform: rotate(25deg); }
+.scale:hover { transform: scale(1.2); }
+.translate:hover { transform: translate(25px, -15px); }
+.skew:hover { transform: skew(15deg, 8deg); }
+
+.transform-item p {
+    font-weight: bold;
+    margin-top: 25px;
+}

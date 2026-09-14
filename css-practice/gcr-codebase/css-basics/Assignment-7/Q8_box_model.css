@@ -1,0 +1,76 @@
+/* Q8 - Box Model and box-sizing comparison */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    text-align: center;
+    padding: 22px;
+    background: #0f172a;
+    color: white;
+}
+
+.page {
+    padding: 40px 20px;
+}
+
+.model-demo {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.margin-layer {
+    padding: 35px;
+    background: #fef3c7;
+    outline: 3px dashed #d97706;
+}
+
+.border-layer {
+    padding: 20px;
+    border: 15px solid #2563eb;
+    background: #dbeafe;
+}
+
+.padding-layer {
+    padding: 30px;
+    background: #dcfce7;
+}
+
+.content-layer {
+    padding: 25px;
+    background: #bbf7d0;
+    border: 2px solid #15803d;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comparison {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.comparison article {
+    width: 300px;
+    padding: 30px;
+    border: 10px solid #334155;
+    border-radius: 14px;
+}
+
+.content-box {
+    box-sizing: content-box;
+    background: #fee2e2;
+}
+
+.border-box {
+    box-sizing: border-box;
+    background: #e0e7ff;
+}

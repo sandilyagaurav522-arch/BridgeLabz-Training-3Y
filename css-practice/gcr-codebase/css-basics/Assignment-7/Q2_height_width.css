@@ -1,0 +1,60 @@
+/* Q2 - Height, Width, min-height, max-width and overflow */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: #312e81;
+    color: white;
+}
+
+.layout {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.size-box {
+    padding: 20px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    overflow: auto;
+    min-height: 150px;
+}
+
+.box-px {
+    width: 220px;
+    height: 160px;
+    background: #2563eb;
+}
+
+.box-percent {
+    width: 35%;
+    max-width: 320px;
+    min-height: 180px;
+    background: #059669;
+}
+
+.box-vh {
+    width: 18em;
+    height: 25vh;
+    min-height: 170px;
+    max-width: 300px;
+    background: #c2410c;
+    overflow: auto;
+}
+
+@media (max-width: 700px) {
+    .box-percent { width: 90%; }
+}

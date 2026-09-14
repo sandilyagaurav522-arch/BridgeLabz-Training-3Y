@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Exploration - Gaurav Sandilya</title>
+    <link rel="stylesheet" href="Q8_box_model.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model Exploration</h1>
+        <p>Name: Gaurav Sandilya</p>
+    </header>
+
+    <main class="page">
+        <section class="model-demo">
+            <div class="margin-layer">
+                <div class="border-layer">
+                    <div class="padding-layer">
+                        <div class="content-layer">
+                            <strong>Content</strong>
+                            <span>Actual text/content area</span>
+                        </div>
+                        <p>Padding: internal space</p>
+                    </div>
+                    <p>Border: edge around padding and content</p>
+                </div>
+                <p>Margin: external space around the element</p>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <article class="content-box">
+                <h2>content-box</h2>
+                <p>Default box sizing. Width applies to content; padding and border are added.</p>
+            </article>
+            <article class="border-box">
+                <h2>border-box</h2>
+                <p>Width includes content, padding and border.</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

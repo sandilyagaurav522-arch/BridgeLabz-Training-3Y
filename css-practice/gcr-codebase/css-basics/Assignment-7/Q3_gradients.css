@@ -1,0 +1,57 @@
+/* Q3 - Linear and Radial Gradients */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    padding: 14px;
+    background: rgba(15, 23, 42, 0.92);
+}
+
+header h1, header p { margin: 4px; }
+
+.gradient {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 30px;
+}
+
+.linear {
+    background: linear-gradient(135deg, #1d4ed8, #7c3aed, #db2777);
+    background-attachment: fixed;
+}
+
+.radial {
+    background: radial-gradient(circle at center, #14b8a6, #0f766e, #134e4a);
+}
+
+.content {
+    max-width: 650px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(15, 23, 42, 0.92);
+}

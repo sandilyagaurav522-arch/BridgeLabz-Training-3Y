@@ -1,0 +1,98 @@
+/* Q5 - Advanced CSS Selectors */
+
+/* Element selector */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Class selector */
+.selector-demo {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Descendant combinator: styles every li inside .items */
+.items li {
+    padding: 10px;
+}
+
+/* Child combinator > : only direct children of ul */
+.items > ul > li {
+    border-left: 5px solid #2563eb;
+}
+
+/* Adjacent sibling combinator + */
+.items h2 + p {
+    color: #2563eb;
+}
+
+/* General sibling combinator ~ */
+.items h2 ~ .note {
+    font-style: italic;
+    background: #fef3c7;
+    padding: 10px;
+}
+
+/* Attribute selector */
+input[type="text"] {
+    border: 2px solid #16a34a;
+}
+
+/* Attribute selector for email */
+input[type="email"] {
+    border: 2px solid #9333ea;
+}
+
+/* Attribute selector for HTTPS links */
+a[href^="https"] {
+    color: #dc2626;
+}
+
+/* Pseudo-class :hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Pseudo-class :focus */
+input:focus {
+    outline: 3px solid #bfdbfe;
+    outline-offset: 2px;
+}
+
+/* Pseudo-class :nth-child() */
+li:nth-child(2) {
+    background: #dbeafe;
+    font-weight: bold;
+}
+
+/* Pseudo-elements */
+.items::before {
+    content: "START";
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background: #0f172a;
+    color: white;
+    border-radius: 6px;
+}
+
+.items::after {
+    content: "END";
+    display: block;
+    margin-top: 10px;
+    color: #64748b;
+    font-weight: bold;
+}
+
+input {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+}

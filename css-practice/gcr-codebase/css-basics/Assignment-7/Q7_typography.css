@@ -1,0 +1,72 @@
+/* Q7 - Typography and Text Styling */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    background: #1e3a8a;
+    color: white;
+}
+
+.article {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.article h2 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #cbd5e1;
+}
+
+.article p {
+    line-height: 1.8;
+    text-align: justify;
+    letter-spacing: 0.3px;
+}
+
+.serif {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+}
+
+.sans {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+}
+
+.large {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+mark {
+    background: #fde68a;
+    color: #92400e;
+    padding: 2px 5px;
+}
+
+strong { color: #b91c1c; }
+em { color: #047857; }
+
+.article p::first-letter {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.article p::first-line {
+    letter-spacing: 0.8px;
+}
