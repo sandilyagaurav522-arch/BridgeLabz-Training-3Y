@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+/* Element selector: styles every paragraph consistently. */
+p { line-height: 1.6; color: #334155; }
+/* Class selector: highlights elements carrying the class. */
+.highlight { background: #fef3c7; padding: 10px; border-left: 4px solid #f59e0b; }
+/* ID selector: targets one unique element. */
+#special { color: #7c3aed; font-weight: bold; }
+/* Attribute selector: targets links with a target attribute. */
+a[target="_blank"] { display: inline-block; color: #0369a1; font-weight: bold; }
+/* Descendant combinator: any paragraph inside .demo. */
+.demo p { background: #ecfeff; padding: 8px; }
+/* Child combinator: only direct li children of ul. */
+.demo > ul > li { margin: 7px 0; padding: 8px; background: #dcfce7; }
+/* Adjacent sibling combinator: paragraph immediately after .first. */
+.first + p { border-left: 4px solid #2563eb; padding-left: 10px; }
+/* General sibling combinator: all later paragraphs after .first. */
+.first ~ p { background: #eff6ff; }
+/* Page layout and semantic structure. */
+body { margin: 0; font-family: Arial, sans-serif; background: #f1f5f9; }
+header, footer { text-align: center; padding: 22px; background: #1e293b; color: white; }
+main { max-width: 900px; margin: auto; padding: 35px; }
+.card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 25px #0002; }
+code { background: #e2e8f0; padding: 2px 5px; border-radius: 4px; }

@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; font-family: Arial, sans-serif; background: #f8fafc; }
+header, footer { text-align: center; padding: 20px; background: #111827; color: white; }
+.stage { flex: 1; display: flex; justify-content: center; align-items: center; gap: 70px; flex-wrap: wrap; padding: 40px; }
+.moving-box { width: 90px; height: 90px; display: grid; place-items: center; background: #60a5fa; border-radius: 12px; animation: move 3s ease-in-out 0s infinite alternate; }
+.ball { width: 75px; height: 75px; display: grid; place-items: center; border-radius: 50%; background: #fbbf24; font-size: 12px; animation: bounce 1.5s ease-in-out .5s infinite; }
+.color-text { animation: colorChange 2.5s ease-in-out 0s infinite alternate; }
+@keyframes move { from { transform: translateX(-70px) rotate(0deg); } to { transform: translateX(70px) rotate(180deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-90px); } }
+@keyframes colorChange { from { opacity: .35; transform: scale(1); } to { opacity: 1; transform: scale(1.12); } }

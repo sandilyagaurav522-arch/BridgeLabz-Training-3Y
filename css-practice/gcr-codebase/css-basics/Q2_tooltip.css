@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: #eef2ff; color: #1e293b; display: flex; flex-direction: column; }
+header, footer { text-align: center; padding: 20px; background: #312e81; color: white; }
+.tooltip-container { flex: 1; display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap; padding: 40px; }
+.tip-item { position: relative; text-align: center; }
+.icon { display: inline-flex; width: 70px; height: 70px; justify-content: center; align-items: center; border-radius: 50%; background: white; box-shadow: 0 8px 20px #0002; font-size: 30px; cursor: help; }
+.tooltip { position: absolute; left: 50%; bottom: calc(100% + 14px); transform: translateX(-50%); background: #111827; color: white; padding: 9px 13px; border-radius: 7px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; }
+.tooltip::after { content: ""; position: absolute; left: 50%; top: 100%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #111827; }
+.tip-item:hover .tooltip { opacity: 1; }
+@media (max-width: 700px) { .tooltip-container { flex-direction: column; gap: 35px; } }
