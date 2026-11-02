@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Path and Coordinates Logger</title>
+<style>
+body{font-family:Arial,sans-serif;margin:30px}
+#tracking-box{width:400px;height:400px;max-width:100%;background:#eaf2ff;border:2px solid #4779c7;position:relative;overflow:hidden;cursor:crosshair}
+#coordinates{font-family:monospace}.dot{width:12px;height:12px;background:red;border-radius:50%;position:absolute;transform:translate(-50%,-50%);pointer-events:none}
+</style>
+</head>
+<body>
+<h1>Mouse Coordinates Logger</h1>
+<p id="coordinates">clientX: —, clientY: —</p>
+<div id="tracking-box" aria-label="Move or double-click inside this box"></div>
+<script>
+const box = document.querySelector("#tracking-box");
+const coordinates = document.querySelector("#coordinates");
+
+box.addEventListener("mousemove", (event) => {
+    coordinates.textContent = `clientX: ${event.clientX}, clientY: ${event.clientY}`;
+});
+
+box.addEventListener("dblclick", (event) => {
+    const bounds = box.getBoundingClientRect();
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    dot.style.left = `${event.clientX - bounds.left}px`;
+    dot.style.top = `${event.clientY - bounds.top}px`;
+    box.appendChild(dot);
+});
+</script>
+</body>
+</html>

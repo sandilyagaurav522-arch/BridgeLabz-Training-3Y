@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Dropdown</title>
+<style>
+body{font-family:Arial,sans-serif;margin:50px}
+.dropdown{position:relative;display:inline-block}
+#dropdown-toggle{padding:12px 18px;min-width:200px;text-align:left}
+#options{display:none;position:absolute;top:100%;left:0;min-width:200px;background:white;border:1px solid #ccc;box-shadow:0 3px 8px #0002;z-index:1}
+#options.open{display:block}.option{display:block;width:100%;padding:10px;text-align:left;border:0;background:white;cursor:pointer}
+.option:hover{background:#eef2f7}
+</style>
+</head>
+<body>
+<h1>Custom Dropdown</h1>
+<div class="dropdown" id="dropdown">
+<button id="dropdown-toggle" aria-expanded="false">Choose a fruit ▾</button>
+<div id="options">
+<button class="option" type="button">Apple</button>
+<button class="option" type="button">Banana</button>
+<button class="option" type="button">Mango</button>
+<button class="option" type="button">Orange</button>
+</div>
+</div>
+<script>
+const dropdown = document.querySelector("#dropdown");
+const toggle = document.querySelector("#dropdown-toggle");
+const options = document.querySelector("#options");
+
+toggle.addEventListener("click", () => {
+    const isOpen = options.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+// Capturing phase: document sees the click before it reaches the target.
+document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+        options.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+    }
+}, true);
+
+options.addEventListener("click", (event) => {
+    if (!event.target.classList.contains("option")) return;
+    toggle.textContent = `${event.target.textContent} ▾`;
+    options.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+});
+</script>
+</body>
+</html>

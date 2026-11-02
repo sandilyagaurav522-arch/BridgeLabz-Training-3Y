@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Submit Blocker with Live Errors</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:500px;margin:40px auto;padding:0 16px}
+label{display:block;margin-top:14px}input{width:100%;padding:10px;box-sizing:border-box;margin-top:5px}
+.error{color:#c00;min-height:18px;font-size:14px}button{padding:10px 16px}
+#success{color:green;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form id="signup-form" novalidate>
+<label for="name">Name</label><input id="name" name="name">
+<p class="error" id="name-error"></p>
+<label for="email">Email</label><input id="email" name="email" type="email">
+<p class="error" id="email-error"></p>
+<label for="password">Password</label><input id="password" name="password" type="password">
+<p class="error" id="password-error"></p>
+<button type="submit">Submit</button>
+</form>
+<p id="success" role="status"></p>
+<script>
+const form = document.querySelector("#signup-form");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
+const success = document.querySelector("#success");
+
+function validateField(field) {
+    const value = field.value.trim();
+    let error = "";
+
+    if (field === nameInput && !value) error = "Name is required.";
+    if (field === emailInput && (!value || !value.includes("@"))) error = "Enter an email containing @.";
+    if (field === passwordInput && field.value.length < 6) error = "Password must be at least 6 characters.";
+
+    document.querySelector(`#${field.id}-error`).textContent = error;
+    return error === "";
+}
+
+[nameInput, emailInput, passwordInput].forEach((field) => {
+    field.addEventListener("input", () => {
+        validateField(field);
+        success.textContent = "";
+    });
+});
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const isValid = [nameInput, emailInput, passwordInput]
+        .map(validateField)
+        .every(Boolean);
+
+    if (isValid) {
+        success.textContent = "Form Submitted Successfully";
+        form.reset();
+    } else {
+        success.textContent = "";
+    }
+});
+</script>
+</body>
+</html>

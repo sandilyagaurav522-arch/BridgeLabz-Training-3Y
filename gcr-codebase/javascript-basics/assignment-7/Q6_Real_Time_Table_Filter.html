@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-Time Student Table Filter</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:0 16px}
+input{padding:10px;width:100%;max-width:400px;margin-bottom:16px;box-sizing:border-box}
+table{width:100%;border-collapse:collapse;background:white}th,td{padding:10px;border:1px solid #ddd;text-align:left}
+th{background:#eef2f7}#no-results{color:#b00}
+</style>
+</head>
+<body>
+<h1>Student Search</h1>
+<input id="search" type="search" placeholder="Search by name, branch, or CGPA">
+<table>
+<thead><tr><th>Name</th><th>Branch</th><th>CGPA</th></tr></thead>
+<tbody id="student-rows">
+<tr><td>Aarav Sharma</td><td>CSE</td><td>8.4</td></tr>
+<tr><td>Priya Singh</td><td>ECE</td><td>9.1</td></tr>
+<tr><td>Rohan Verma</td><td>IT</td><td>7.8</td></tr>
+<tr><td>Neha Gupta</td><td>CSE</td><td>8.9</td></tr>
+<tr><td>Arjun Patel</td><td>ME</td><td>7.2</td></tr>
+</tbody>
+</table>
+<p id="no-results" hidden>No results found</p>
+<script>
+const searchInput = document.querySelector("#search");
+const rows = [...document.querySelectorAll("#student-rows tr")];
+const noResults = document.querySelector("#no-results");
+
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    rows.forEach((row) => {
+        const matches = row.textContent.toLowerCase().includes(query);
+        row.hidden = !matches;
+        if (matches) visibleCount++;
+    });
+
+    noResults.hidden = visibleCount !== 0;
+});
+</script>
+</body>
+</html>

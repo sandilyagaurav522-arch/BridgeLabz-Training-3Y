@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Product List Manager</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:0 16px;background:#f5f7fb}
+.panel{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 12px #0001}
+input{padding:10px;min-width:220px}button{padding:9px 12px;cursor:pointer;margin:3px}
+li{padding:8px;margin:8px 0;background:#f0f2f6;display:flex;align-items:center;gap:8px}
+.product-name{flex:1}.edit-input{flex:1;padding:8px}
+</style>
+</head>
+<body>
+<div class="panel">
+<h1>Product List Manager</h1>
+<form id="product-form"><input id="product-input" placeholder="Enter product name" required><button>Add Product</button></form>
+<ul id="product-list"></ul>
+</div>
+<script>
+const form = document.querySelector("#product-form");
+const input = document.querySelector("#product-input");
+const list = document.querySelector("#product-list");
+let editingItem = null;
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = input.value.trim();
+    if (!name) return;
+    const item = document.createElement("li");
+    const label = document.createElement("span");
+    label.className = "product-name";
+    label.textContent = name;
+    item.append(label, createButton("Edit", "edit"), createButton("Delete", "delete"));
+    list.appendChild(item);
+    input.value = "";
+});
+
+function createButton(text, action) {
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.dataset.action = action;
+    button.type = "button";
+    return button;
+}
+
+function saveEdit(item) {
+    if (!item || !item.querySelector(".edit-input")) return;
+    const editor = item.querySelector(".edit-input");
+    const label = document.createElement("span");
+    label.className = "product-name";
+    label.textContent = editor.value.trim() || "Unnamed product";
+    editor.replaceWith(label);
+    editingItem = null;
+}
+
+function startEdit(item) {
+    if (editingItem && editingItem !== item) saveEdit(editingItem);
+    const label = item.querySelector(".product-name");
+    if (!label) return;
+    const editor = document.createElement("input");
+    editor.className = "edit-input";
+    editor.value = label.textContent;
+    label.replaceWith(editor);
+    editingItem = item;
+    editor.focus();
+}
+
+list.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-action]");
+    if (!button) return;
+    const item = button.closest("li");
+    if (button.dataset.action === "edit") startEdit(item);
+    if (button.dataset.action === "delete") {
+        if (editingItem === item) editingItem = null;
+        item.remove();
+    }
+});
+
+// Clicking outside the edited item saves the current edit.
+document.addEventListener("click", (event) => {
+    if (editingItem && !editingItem.contains(event.target)) saveEdit(editingItem);
+});
+</script>
+</body>
+</html>

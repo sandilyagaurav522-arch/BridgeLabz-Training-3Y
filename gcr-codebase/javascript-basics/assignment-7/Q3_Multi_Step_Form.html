@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Step Form</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:520px;margin:40px auto;padding:0 16px}
+.step{display:none}.step.active{display:block}label{display:block;margin:12px 0 5px}
+input{width:100%;padding:10px;box-sizing:border-box}.error{color:#c00;min-height:20px}
+button{padding:10px 16px;margin:10px 5px 0 0}#summary{background:#eef7ee;padding:16px}
+</style>
+</head>
+<body>
+<h1>Registration — Step <span id="step-number">1</span> of 3</h1>
+<form id="registration-form" novalidate>
+<section class="step active" data-step="0">
+<label for="name">Name</label><input id="name" autocomplete="name" required>
+<p class="error" id="name-error"></p>
+</section>
+<section class="step" data-step="1">
+<label for="email">Email</label><input id="email" type="email" autocomplete="email" required>
+<p class="error" id="email-error"></p>
+</section>
+<section class="step" data-step="2">
+<label for="password">Password</label><input id="password" type="password" minlength="6" required>
+<p class="error" id="password-error"></p>
+</section>
+<div id="navigation"><button type="button" id="back" hidden>Back</button><button type="button" id="next">Next</button></div>
+</form>
+<section id="summary" hidden><h2>Summary</h2><p id="summary-content"></p></section>
+<script>
+const steps = [...document.querySelectorAll(".step")];
+const fields = [
+    document.querySelector("#name"),
+    document.querySelector("#email"),
+    document.querySelector("#password")
+];
+const stepNumber = document.querySelector("#step-number");
+const backButton = document.querySelector("#back");
+const nextButton = document.querySelector("#next");
+let currentStep = 0;
+
+function isValid(index) {
+    const field = fields[index];
+    const value = field.value.trim();
+    let valid = value.length > 0;
+    if (index === 1) valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    if (index === 2) valid = field.value.length >= 6;
+    document.querySelector(`#${field.id}-error`).textContent = valid ? "" :
+        (index === 1 ? "Enter a valid email address." :
+         index === 2 ? "Password must be at least 6 characters." : "Name is required.");
+    return valid;
+}
+
+function showStep(index) {
+    currentStep = index;
+    steps.forEach((step, i) => step.classList.toggle("active", i === index));
+    stepNumber.textContent = index + 1;
+    backButton.hidden = index === 0;
+    nextButton.textContent = index === 2 ? "Finish" : "Next";
+}
+
+nextButton.addEventListener("click", () => {
+    if (!isValid(currentStep)) return;
+    if (currentStep < 2) {
+        showStep(currentStep + 1);
+    } else {
+        document.querySelector("#registration-form").hidden = true;
+        document.querySelector("#summary").hidden = false;
+        document.querySelector("#summary-content").textContent =
+            `Name: ${fields[0].value.trim()} | Email: ${fields[1].value.trim()} | Password: ${"*".repeat(fields[2].value.length)}`;
+    }
+});
+backButton.addEventListener("click", () => showStep(currentStep - 1));
+fields.forEach((field, index) => field.addEventListener("input", () => {
+    if (field.value.trim()) isValid(index);
+}));
+</script>
+</body>
+</html>

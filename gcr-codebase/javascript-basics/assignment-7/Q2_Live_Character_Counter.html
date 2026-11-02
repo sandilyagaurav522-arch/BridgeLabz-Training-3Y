@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Character Counter</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:600px;margin:50px auto;padding:0 16px}
+textarea{width:100%;height:150px;padding:12px;box-sizing:border-box}
+#counter{margin-top:8px;color:green}.warning{color:#d49b00!important}.limit{color:red!important}
+</style>
+</head>
+<body>
+<h1>Live Character Counter</h1>
+<textarea id="message" maxlength="100" placeholder="Write up to 100 characters..."></textarea>
+<p id="counter">100 characters remaining</p>
+<button id="reset">Reset</button>
+<script>
+const textarea = document.querySelector("#message");
+const counter = document.querySelector("#counter");
+const maximum = 100;
+
+function updateCounter() {
+    const remaining = maximum - textarea.value.length;
+    counter.textContent = `${remaining} characters remaining`;
+    counter.classList.toggle("warning", remaining <= 20 && remaining > 0);
+    counter.classList.toggle("limit", remaining === 0);
+}
+
+textarea.addEventListener("beforeinput", (event) => {
+    // Prevent insertion when the textarea is already at its limit.
+    // Deletions are allowed so the user can shorten the text.
+    const isInsertion = event.inputType.startsWith("insert");
+    if (isInsertion && textarea.value.length >= maximum) {
+        event.preventDefault();
+    }
+});
+
+textarea.addEventListener("input", updateCounter);
+document.querySelector("#reset").addEventListener("click", () => {
+    textarea.value = "";
+    updateCounter();
+});
+updateCounter();
+</script>
+</body>
+</html>
