@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design Principles Summary</title>
+  <link rel="stylesheet" href="Q9_Responsive_Design_Principles_Summary.css">
+</head>
+<body>
+  <main><h1>Responsive Design Principles</h1><section class="principles">
+    <article><h2>Fluid Layouts</h2><p>Use flexible units so layout width adapts to the viewport.</p><code>.container { width: min(90%, 1100px); margin: auto; }</code></article>
+    <article><h2>Flexible Media</h2><p>Prevent images from overflowing their containers.</p><code>img { max-width: 100%; height: auto; }</code></article>
+    <article><h2>Breakpoints</h2><p>Adjust the layout when content needs more room.</p><code>@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }</code></article>
+  </section></main>
+</body>
+</html>

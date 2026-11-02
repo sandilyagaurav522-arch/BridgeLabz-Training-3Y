@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 36px 5%; font-family: Arial, sans-serif; background: #f2f6fb; color: #202b3c; }
+h1 { text-align: center; margin-bottom: 28px; }
+.cheats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.topic { background: white; border: 1px solid #dce4ef; border-radius: 12px; padding: 22px; transition: transform .25s ease, box-shadow .25s ease; }
+.topic:hover { transform: translateY(-4px); box-shadow: 0 10px 24px #17203318; }
+.topic h2 { margin-top: 0; color: #24599b; }
+code { display: block; overflow-wrap: anywhere; background: #edf2fa; padding: 10px; border-radius: 6px; }
+@media (max-width: 900px) { .cheats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 699px) { .cheats { grid-template-columns: 1fr; } .topic { display: grid; grid-template-columns: 1fr; gap: 6px; } }

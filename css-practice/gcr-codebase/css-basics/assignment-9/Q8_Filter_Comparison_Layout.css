@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 36px 5%; font-family: Arial, sans-serif; background: #f6f7fa; color: #202633; }
+h1 { text-align: center; margin-bottom: 30px; }
+.comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 1100px; margin: auto; }
+figure { margin: 0; background: white; padding: 14px; border-radius: 12px; box-shadow: 0 4px 16px #0001; }
+img { width: 100%; display: block; border-radius: 8px; transition: filter .45s ease; }
+.filtered { filter: contrast(1.8) brightness(.8); }
+figure:hover img { filter: none; }
+figcaption { padding: 14px 4px 4px; text-align: center; font-weight: 700; }
+@media (max-width: 699px) { .comparison { grid-template-columns: 1fr; } }

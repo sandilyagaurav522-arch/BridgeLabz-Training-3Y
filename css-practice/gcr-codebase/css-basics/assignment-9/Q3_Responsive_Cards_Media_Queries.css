@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 36px 5%; font-family: Arial, sans-serif; background: #f7f8fb; color: #202633; }
+h1 { text-align: center; margin-bottom: 28px; }
+.cards { display: flex; flex-wrap: wrap; gap: 20px; }
+.card { flex: 1 1 calc(25% - 20px); min-width: 0; padding: 24px; background: #e5efff; border-radius: 12px; transition: background-color .25s ease, transform .25s ease; }
+.card:hover { background: #c8e8dd; transform: translateY(-4px); }
+@media (max-width: 900px) { .card { flex-basis: calc(50% - 20px); } }
+@media (max-width: 600px) { .card { flex-basis: 100%; } }
