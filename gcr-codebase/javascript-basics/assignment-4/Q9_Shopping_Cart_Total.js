@@ -1,0 +1,4 @@
+// Gaurav Sandilya | GLA University | Assignment 4 Q9
+"use strict";
+class Cart{constructor(){this.items=[];}addItem(name,price,quantity){if(!name||!Number.isFinite(price)||price<0||!Number.isInteger(quantity)||quantity<1)throw new TypeError("Invalid item details");this.items.push({name,price,quantity});}getTotal(){return this.items.reduce((sum,i)=>sum+i.price*i.quantity,0);}applyCoupon(code){if(!/^(SAVE20|DISC10)$/.test(code))throw new Error("Use SAVE20 or DISC10");const discount=code==="SAVE20"?20:10;return this.getTotal()*(1-discount/100);}}
+const cart=new Cart();cart.addItem("Keyboard",1500,1);cart.addItem("Notebook",100,3);cart.addItem("Headphones",800,1);console.log("Subtotal: ₹"+cart.getTotal().toFixed(2));for(const code of ["SAVE20","DISC10","INVALID"]){try{console.log(`${code}: ₹${cart.applyCoupon(code).toFixed(2)}`);}catch(e){console.log(e.message);}}

@@ -1,0 +1,6 @@
+// Gaurav Sandilya | GLA University | Assignment 4 Q4
+"use strict";
+class FormBuilder{constructor(fields,container,onSubmit){Object.assign(this,{fields,container,onSubmit});}
+buildForm(){const form=document.createElement("form");form.id="generatedForm";this.fields.forEach((f,i)=>{const label=document.createElement("label");label.textContent=f.label+" ";const input=document.createElement("input");input.type=f.type||"text";input.name=f.name||`field${i}`;input.required=!!f.required;label.append(input);form.append(label,document.createElement("br"));});const button=document.createElement("button");button.textContent="Submit";button.type="submit";form.append(button);form.addEventListener("submit",e=>{e.preventDefault();this.onSubmit(this.getFormData());});this.container.replaceChildren(form);}
+getFormData(){return Object.fromEntries(new FormData(this.container.querySelector("form")).entries());}}
+new FormBuilder([{type:"text",label:"Username",name:"username",required:true},{type:"email",label:"Email",name:"email",required:true},{type:"number",label:"Age",name:"age"}],document.querySelector("#formContainer"),data=>document.querySelector("#formData").textContent=JSON.stringify(data,null,2)).buildForm();
