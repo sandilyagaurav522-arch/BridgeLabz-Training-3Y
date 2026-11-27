@@ -1,0 +1,1 @@
+$(function(){let i=0;const $b=$(".banner");$b.hide().eq(0).show();$("#hide").click(()=>$b.hide());$("#show").click(()=>$b.show());$("#up").click(()=>$b.slideUp());$("#down").click(()=>$b.slideDown());$("#fadeout").click(()=>$b.fadeOut());$("#fadein").click(()=>$b.fadeIn());setInterval(()=>{$b.eq(i).fadeOut(250,()=>{i=(i+1)%$b.length;$b.eq(i).fadeIn(250);});},5000);});
