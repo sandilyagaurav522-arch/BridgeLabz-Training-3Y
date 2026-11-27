@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aarav"
+    },
+    {
+      "id": 2,
+      "name": "Diya"
+    },
+    {
+      "id": 3,
+      "name": "Kabir"
+    },
+    {
+      "id": 4,
+      "name": "Ananya"
+    },
+    {
+      "id": 5,
+      "name": "Ishaan"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "total": 1200
+    },
+    {
+      "id": 2,
+      "total": 850
+    },
+    {
+      "id": 3,
+      "total": 2300
+    },
+    {
+      "id": 4,
+      "total": 450
+    },
+    {
+      "id": 5,
+      "total": 999
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Mouse"
+    },
+    {
+      "id": 2,
+      "name": "Keyboard"
+    },
+    {
+      "id": 3,
+      "name": "Monitor"
+    },
+    {
+      "id": 4,
+      "name": "Webcam"
+    },
+    {
+      "id": 5,
+      "name": "USB Hub"
+    }
+  ]
+}

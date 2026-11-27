@@ -1,0 +1,39 @@
+{
+  "timetable": [
+    {
+      "id": 1,
+      "day": "Monday",
+      "subject": "Data Structures",
+      "faculty": "Dr. Mehta",
+      "time": "09:00 AM - 10:00 AM"
+    },
+    {
+      "id": 2,
+      "day": "Monday",
+      "subject": "Computer Networks",
+      "faculty": "Prof. Sharma",
+      "time": "10:00 AM - 11:00 AM"
+    },
+    {
+      "id": 3,
+      "day": "Tuesday",
+      "subject": "Database Management",
+      "faculty": "Dr. Rao",
+      "time": "09:00 AM - 10:00 AM"
+    },
+    {
+      "id": 4,
+      "day": "Wednesday",
+      "subject": "Operating Systems",
+      "faculty": "Prof. Singh",
+      "time": "11:00 AM - 12:00 PM"
+    },
+    {
+      "id": 5,
+      "day": "Friday",
+      "subject": "Algorithms",
+      "faculty": "Dr. Verma",
+      "time": "02:00 PM - 03:00 PM"
+    }
+  ]
+}

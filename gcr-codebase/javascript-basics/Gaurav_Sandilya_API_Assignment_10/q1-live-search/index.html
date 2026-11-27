@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q1 - Live Product Search</title><link rel="stylesheet" href="../shared/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <a href="../README.md">← Assignment guide</a>
+    <h1>Live Product Search</h1>
+    <p>Search products by name. Results are loaded from the JSON Server API.</p>
+    <input id="search" type="search" placeholder="Start typing a product name..." autocomplete="off">
+    <p id="loading" class="muted" hidden>Loading products...</p>
+    <p id="message" class="message" aria-live="polite"></p>
+    <section id="results" class="product-grid"></section>
+  </main>
+  <script src="script.js"></script>
+</body></html>
